@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Ana Silva | Psicologia Clínica & Saúde Mental</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes Google (Playfair Display para títulos elegantes e Plus Jakarta Sans para leitura) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3ebe3',
+                            200: '#c7d8c7',
+                            300: '#a3be9f',
+                            600: '#52724f',
+                            700: '#415a3f',
+                            800: '#364934',
+                            900: '#2d3d2c'
+                        },
+                        sand: {
+                            50: '#fdfbf7',
+                            100: '#f7f2e9',
+                            200: '#eedfcc',
+                            300: '#e2c8a7',
+                            800: '#695138'
+                        },
+                        terracotta: {
+                            500: '#d97757',
+                            600: '#c25c3c'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfbf7;
+            color: #2d3748;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-sage-200 selection:text-sage-900">
+
+    <!-- TOPBAR AVISO URGÊNCIA -->
+    <div class="bg-sage-800 text-sand-100 text-xs py-2 px-4 text-center font-medium">
+        <span>Precisa de ajuda imediata? Em caso de crise ou urgência emocional, ligue para o <strong>CVV (188)</strong> - Atendimento gratuito 24h.</span>
+    </div>
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="sticky top-0 z-50 bg-sand-50/90 backdrop-blur-md border-b border-sand-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-sage-600 text-white flex items-center justify-center font-serif text-xl font-bold shadow-sm transition-transform group-hover:scale-105">
+                    Ψ
+                </div>
+                <div>
+                    <span class="block font-serif text-xl font-semibold text-sage-900 leading-tight">Dra. Ana Silva</span>
+                    <span class="block text-xs text-sage-600 font-medium tracking-wider uppercase">Psicóloga Clínica • CRP 06/123456</span>
+                </div>
+            </a>
+
+            <!-- Nav Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+                <a href="#sobre" class="hover:text-sage-600 transition-colors">Sobre Mim</a>
+                <a href="#servicos" class="hover:text-sage-600 transition-colors">Serviços</a>
+                <a href="#como-funciona" class="hover:text-sage-600 transition-colors">Como Funciona</a>
+                <a href="#online" class="hover:text-sage-600 transition-colors">Atendimento Online</a>
+                <a href="#depoimentos" class="hover:text-sage-600 transition-colors">Depoimentos</a>
+                <a href="#faq" class="hover:text-sage-600 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Agendar -->
+            <div class="hidden md:flex items-center">
+                <a href="#contato" class="inline-flex items-center gap-2 bg-sage-600 hover:bg-sage-700 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5">
+                    <i class="fa-brands font-semibold fa-whatsapp text-lg"></i>
+                    <span>Agendar Consulta</span>
+                </a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-sage-600 focus:outline-none p-2" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-sand-50 border-b border-sand-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#sobre" class="mobile-link block py-2 text-gray-700 font-medium hover:text-sage-600">Sobre Mim</a>
+            <a href="#servicos" class="mobile-link block py-2 text-gray-700 font-medium hover:text-sage-600">Serviços</a>
+            <a href="#como-funciona" class="mobile-link block py-2 text-gray-700 font-medium hover:text-sage-600">Como Funciona</a>
+            <a href="#online" class="mobile-link block py-2 text-gray-700 font-medium hover:text-sage-600">Atendimento Online</a>
+            <a href="#depoimentos" class="mobile-link block py-2 text-gray-700 font-medium hover:text-sage-600">Depoimentos</a>
+            <a href="#faq" class="mobile-link block py-2 text-gray-700 font-medium hover:text-sage-600">FAQ</a>
+            <a href="#contato" class="mobile-link w-full text-center mt-2 inline-flex justify-center items-center gap-2 bg-sage-600 text-white font-medium px-5 py-3 rounded-full">
+                <i class="fa-brands fa-whatsapp"></i> Agendar Consulta
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-sand-50 via-sand-100/50 to-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Texto -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-100 text-sage-800 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-sage-600 animate-pulse"></span>
+                        Espaço Seguro & Acolhedor
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-sage-900 leading-tight font-bold">
+                        Um espaço de escuta sem julgamentos para a sua saúde emocional.
+                    </h1>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Reencontre seu equilíbrio, supere desafios emocionais e viva com mais leveza. Ofereço psicoterapia individual online e presencial com abordagem humanizada e científica.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contato" class="inline-flex items-center justify-center gap-3 bg-sage-600 hover:bg-sage-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Agendar Sessão no WhatsApp</span>
+                        </a>
+                        <a href="#sobre" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-sand-100 text-sage-800 font-semibold px-7 py-4 rounded-full border border-sand-300 shadow-sm transition-all duration-200">
+                            <span>Conheça o Trabalho</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Credibilidade Rápida -->
+                    <div class="pt-8 border-t border-sand-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-sage-800">8+ anos</p>
+                            <p class="text-xs text-gray-500 font-medium">De Experiência Clínica</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-sage-800">+500</p>
+                            <p class="text-xs text-gray-500 font-medium">Pacientes Acolhidos</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-sage-800">100%</p>
+                            <p class="text-xs text-gray-500 font-medium">Sigilo Profissional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem Ilustrativa / Foto -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Card Decorativo -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-sage-200 rounded-3xl -z-10 transform -rotate-3"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-sand-200 rounded-3xl -z-10 transform rotate-3"></div>
+                        
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                             alt="Dra. Ana Silva - Psicóloga Clínica" 
+                             class="rounded-3xl shadow-2xl object-cover w-full h-[480px] border-4 border-white"
+                             onerror="this.src='https://placehold.co/600x800/a3be9f/ffffff?text=Dra.+Ana+Silva'">
+
+                        <!-- Tag de destaque no card da foto -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-sand-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-heart text-base"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Atendimento humanizado</p>
+                                <p class="text-sm font-semibold text-sage-900">Abordagem Centrada na Pessoa & TCC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A PROFISSIONAL -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" 
+                             alt="Consultório de Psicologia" 
+                             class="rounded-3xl shadow-lg w-full h-[420px] object-cover"
+                             onerror="this.src='https://placehold.co/600x800/eedfcc/364934?text=Atendimento+Acolhedor'">
+                        
+                        <div class="absolute -bottom-6 -right-6 bg-sage-800 text-white p-6 rounded-2xl max-w-xs shadow-xl hidden sm:block">
+                            <p class="text-sm italic font-serif">"O autoconhecimento é o primeiro passo para a liberdade de ser quem você realmente é."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sage-600 bg-sage-50 px-3 py-1 rounded-md">Sobre Mim</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif text-sage-900 font-bold">Olá, sou a Dra. Ana Silva</h2>
+                    <p class="text-sm font-semibold text-sage-700">Psicóloga Clínica • CRP 06/123456 • Mestre em Psicologia pela USP</p>
+                    
+                    <p class="text-gray-600 leading-relaxed">
+                        Acredito que a terapia não é apenas para resolver momentos de crise, mas um ato contínuo de afeto, coragem e transformação interior. Meu trabalho é oferecer um refúgio acolhedor e confidencial para que você explore seus sentimentos, compreenda seus padrões de comportamento e desenvolva recursos para enfrentar os desafios da vida.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Possuo especialização em Transtornos de Ansiedade, Depressão e Desenvolvimento Pessoal. Atuo integrando a escuta empática com técnicas baseadas em evidências científicas para promover uma mudança genuína e sustentável na sua qualidade de vida.
+                    </p>
+
+                    <!-- Valores / Pilares -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-sand-50 border border-sand-200 flex items-start gap-3">
+                            <i class="fa-solid fa-shield-heart text-sage-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-sm">Sigilo & Ética</h4>
+                                <p class="text-xs text-gray-500 mt-1">Ambiente 100% seguro seguindo o Código de Ética do CRP.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-sand-50 border border-sand-200 flex items-start gap-3">
+                            <i class="fa-solid fa-hand-holding-heart text-sage-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-sm">Escuta Sem Julgamentos</h4>
+                                <p class="text-xs text-gray-500 mt-1">Sua história é acolhida com empatia, respeito e singularidade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO / SERVIÇOS -->
+    <section id="servicos" class="py-20 bg-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-widest text-sage-600 bg-sage-100 px-3 py-1 rounded-md">Áreas de Atuação</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-sage-900 font-bold">Como posso te ajudar no dia a dia?</h2>
+                <p class="text-gray-600">Cada indivíduo possui uma jornada única. Conheça as principais demandas acompanhadas na clínica:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-sage-900 mb-3">Ansiedade & Estresse</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Aprenda a gerenciar pensamentos acelerados, crises de pânico, ansiedade social e o estresse crônico decorrente de rotinas exaustivas.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-xs font-semibold text-sage-600 group-hover:text-sage-800">
+                        <span>Saber mais</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-sage-900 mb-3">Depressão & Humor</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Suporte no resgate da motivação, superação do desânimo profundo, sensação de vazio e reestruturação do bem-estar diário.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-xs font-semibold text-sage-600 group-hover:text-sage-800">
+                        <span>Saber mais</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-sage-900 mb-3">Autoconhecimento</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Desenvolvimento de autoestimativa, fortalecimento de limites saudáveis, clareza sobre valores e tomada de decisões conscientes.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-xs font-semibold text-sage-600 group-hover:text-sage-800">
+                        <span>Saber mais</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-sage-900 mb-3">Relacionamentos & Casal</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Mediação de conflitos, aprimoramento da comunicação afetiva, resolução de ruídos de convivência e reconstrução de vínculos.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-xs font-semibold text-sage-600 group-hover:text-sage-800">
+                        <span>Saber mais</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-sage-900 mb-3">Burnout & Carreira</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Acompanhamento para esgotamento profissional, ansiedade de desempenho, equilíbrio entre vida pessoal e trabalho e transições de carreira.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-xs font-semibold text-sage-600 group-hover:text-sage-800">
+                        <span>Saber mais</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-laptop-house"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-sage-900 mb-3">Atendimento Online / Presencial</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Sessões individuais personalizadas adaptadas ao seu estilo de vida, garantindo sigilo e flexibilidade onde você estiver.
+                    </p>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-xs font-semibold text-sage-600 group-hover:text-sage-800">
+                        <span>Saber mais</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA A TERAPIA (PASSO A PASSO) -->
+    <section id="como-funciona" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-widest text-sage-600 bg-sage-50 px-3 py-1 rounded-md">Passo a Passo</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-sage-900 font-bold">Como funciona o processo terapêutico?</h2>
+                <p class="text-gray-600">Iniciar a terapia é simples e transparente. Veja os primeiros passos da nossa jornada:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                
+                <!-- Passo 1 -->
+                <div class="relative flex flex-col items-center text-center p-6 rounded-2xl bg-sand-50 border border-sand-200">
+                    <div class="w-12 h-12 rounded-full bg-sage-600 text-white font-serif font-bold text-xl flex items-center justify-center mb-4 shadow-md">
+                        1
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-sage-900 mb-2">Primeiro Contato</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Você envia uma mensagem no WhatsApp para tirar dúvidas, verificar horários disponíveis e alinhar a modalidade.
+                    </p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="relative flex flex-col items-center text-center p-6 rounded-2xl bg-sand-50 border border-sand-200">
+                    <div class="w-12 h-12 rounded-full bg-sage-600 text-white font-serif font-bold text-xl flex items-center justify-center mb-4 shadow-md">
+                        2
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-sage-900 mb-2">Sessão Inicial</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Realizamos a primeira consulta de avaliação para nos conhecermos, entender suas demandas e tirar todas as suas dúvidas.
+                    </p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="relative flex flex-col items-center text-center p-6 rounded-2xl bg-sand-50 border border-sand-200">
+                    <div class="w-12 h-12 rounded-full bg-sage-600 text-white font-serif font-bold text-xl flex items-center justify-center mb-4 shadow-md">
+                        3
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-sage-900 mb-2">Definição de Objetivos</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Mapeamos juntos as metas da terapia e estabelecemos o plano de acompanhamento mais adequado ao seu ritmo.
+                    </p>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="relative flex flex-col items-center text-center p-6 rounded-2xl bg-sand-50 border border-sand-200">
+                    <div class="w-12 h-12 rounded-full bg-sage-600 text-white font-serif font-bold text-xl flex items-center justify-center mb-4 shadow-md">
+                        4
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-sage-900 mb-2">Sessões Regulares</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Encontros semanais de 50 minutos para aprofundar reflexões, desenvolver ferramentas e acompanhar sua evolução.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ATENDIMENTO ONLINE -->
+    <section id="online" class="py-20 bg-sage-800 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-sage-200 bg-sage-700/60 px-3 py-1 rounded-md">Sem Fronteiras</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold leading-tight">
+                        Terapia Online: Cuidado onde quer que você esteja.
+                    </h2>
+                    <p class="text-sage-100 text-base leading-relaxed">
+                        A psicoterapia online possui a mesma eficácia comprovada da modalidade presencial. Ela permite que você faça suas sessões do conforto do seu lar, no trabalho ou em viagens, economizando tempo de deslocamento.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-sage-700 text-sage-200 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-lock text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Plataforma Segura e Criptografada</h4>
+                                <p class="text-xs text-sage-200 mt-0.5">Sessões conduzidas via videochamada em ambiente criptografado e estritamente sigiloso.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-sage-700 text-sage-200 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-earth-americas text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Atendimento para Brasileiros no Exterior</h4>
+                                <p class="text-xs text-sage-200 mt-0.5">Acompanhamento psicológico na sua língua materna para lidar com aculturação e saudades.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-sage-700 text-sage-200 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-clock text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Flexibilidade de Horários</h4>
+                                <p class="text-xs text-sage-200 mt-0.5">Opções de horários flexíveis para se adequar à sua rotina pessoal e profissional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#contato" class="inline-flex items-center gap-2 bg-sand-200 hover:bg-sand-300 text-sage-900 font-bold px-7 py-3.5 rounded-full transition-all">
+                            <span>Agendar Atendimento Online</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-sage-700/50 p-8 rounded-3xl border border-sage-600/50 backdrop-blur-sm text-center">
+                        <div class="w-20 h-20 rounded-full bg-sage-600/80 text-white flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">O que você precisa para a sessão?</h3>
+                        <ul class="text-left text-sm text-sage-100 space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-sage-300"></i> Um local privativo e silencioso
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-sage-300"></i> Conexão estável com a internet
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-sage-300"></i> Fones de ouvido para maior privacidade
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-sage-300"></i> Celular, tablet ou computador com câmera
+                            </li>
+                        </ul>
+                        <span class="inline-block text-xs text-sage-300 font-medium italic">Cadastrada e autorizada pelo e-Psi / Conselho Federal de Psicologia</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS DE PACIENTES -->
+    <section id="depoimentos" class="py-20 bg-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-widest text-sage-600 bg-sage-100 px-3 py-1 rounded-md">Depoimentos</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-sage-900 font-bold">Relatos de Transformação</h2>
+                <p class="text-gray-600">A experiência de quem decidiu priorizar a saúde emocional (identidades preservadas por sigilo):</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic leading-relaxed mb-6">
+                            "Cheguei à terapia em um momento de crise intensa de ansiedade. A escuta da Dra. Ana me deu o chão de que eu precisava. Hoje consigo identificar meus gatilhos e viver com muito mais tranquilidade."
+                        </p>
+                    </div>
+                    <div class="border-t border-sand-100 pt-4 flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-sage-900 text-sm">M.S.</p>
+                            <p class="text-xs text-gray-500">Paciente há 1 ano (Online)</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right text-sand-300 text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic leading-relaxed mb-6">
+                            "A terapia me ajudou a impor limites no trabalho e entender o meu valor. O atendimento online é super prático e me sinto totalmente acolhida em cada conversa."
+                        </p>
+                    </div>
+                    <div class="border-t border-sand-100 pt-4 flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-sage-900 text-sm">R.A.</p>
+                            <p class="text-xs text-gray-500">Paciente há 6 meses</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right text-sand-300 text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-sand-200 shadow-sm relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic leading-relaxed mb-6">
+                            "Excelente profissional. Empática, pontual e extremamente dedicada. Recomendo de olhos fechados para qualquer pessoa que busque autoconhecimento."
+                        </p>
+                    </div>
+                    <div class="border-t border-sand-100 pt-4 flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-sage-900 text-sm">G.F.</p>
+                            <p class="text-xs text-gray-500">Paciente há 8 meses (Presencial)</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right text-sand-300 text-2xl"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (PERGUNTAS FREQUENTES) -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-widest text-sage-600 bg-sage-50 px-3 py-1 rounded-md">FAQ</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-sage-900 font-bold">Dúvidas Frequentes</h2>
+                <p class="text-gray-600">Confira as respostas para as perguntas mais comuns antes de agendar sua sessão:</p>
+            </div>
+
+            <!-- Accordion FAQ -->
+            <div class="space-y-4">
+                
+                <!-- Item 1 -->
+                <div class="border border-sand-200 rounded-xl overflow-hidden transition-colors">
+                    <button class="faq-btn w-full p-5 text-left font-serif font-semibold text-sage-900 flex justify-between items-center hover:bg-sand-50 transition-colors">
+                        <span>Qual é a duração e frequência das sessões?</span>
+                        <i class="fa-solid fa-chevron-down text-sage-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                        As sessões individuais têm duração de 50 minutos. A frequência recomendada para o início do processo é semanal, garantindo a continuidade do trabalho terapêutico.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border border-sand-200 rounded-xl overflow-hidden transition-colors">
+                    <button class="faq-btn w-full p-5 text-left font-serif font-semibold text-sage-900 flex justify-between items-center hover:bg-sand-50 transition-colors">
+                        <span>Você atende por convênio / plano de saúde?</span>
+                        <i class="fa-solid fa-chevron-down text-sage-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                        Os atendimentos são particulares, mas emito recibo / nota fiscal para que você possa solicitar o **reembolso junto ao seu plano de saúde** (a maioria dos convênios oferece essa modalidade).
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="border border-sand-200 rounded-xl overflow-hidden transition-colors">
+                    <button class="faq-btn w-full p-5 text-left font-serif font-semibold text-sage-900 flex justify-between items-center hover:bg-sand-50 transition-colors">
+                        <span>Como é garantido o sigilo do atendimento?</span>
+                        <i class="fa-solid fa-chevron-down text-sage-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                        O sigilo é rigorosamente mantido conforme o Código de Ética Profissional do Psicólogo. Nada do que for dito em sessão será compartilhado com terceiros.
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="border border-sand-200 rounded-xl overflow-hidden transition-colors">
+                    <button class="faq-btn w-full p-5 text-left font-serif font-semibold text-sage-900 flex justify-between items-center hover:bg-sand-50 transition-colors">
+                        <span>A terapia online é tão eficaz quanto a presencial?</span>
+                        <i class="fa-solid fa-chevron-down text-sage-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                        Sim! Diversos estudos científicos e a prática clínica comprovam que a psicoterapia online possui o mesmo nível de eficácia, oferecendo ainda mais conforto e praticidade para o paciente.
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="border border-sand-200 rounded-xl overflow-hidden transition-colors">
+                    <button class="faq-btn w-full p-5 text-left font-serif font-semibold text-sage-900 flex justify-between items-center hover:bg-sand-50 transition-colors">
+                        <span>Quais são as formas de pagamento?</span>
+                        <i class="fa-solid fa-chevron-down text-sage-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                        O pagamento pode ser efetuado via PIX, transferência bancária ou cartão de crédito, podendo ser pago por sessão individual ou pacote mensal.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO E AGENDAMENTO -->
+    <section id="contato" class="py-20 bg-sand-100/60 border-t border-sand-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info de Contato -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-sage-600 bg-sage-100 px-3 py-1 rounded-md">Agendamento</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif text-sage-900 font-bold mt-4">Dê o primeiro passo rumo ao seu bem-estar.</h2>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+                            Preencha o formulário para enviar uma mensagem direta para o meu WhatsApp ou entre em contato pelos canais oficiais:
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-sand-200">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">WhatsApp / Telefone</p>
+                                <p class="font-semibold text-sage-900 text-sm">(11) 99999-8888</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-sand-200">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">E-mail</p>
+                                <p class="font-semibold text-sage-900 text-sm">contato@draanasilva.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-sand-200">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Atendimento Presencial</p>
+                                <p class="font-semibold text-sage-900 text-sm">Av. Paulista, 1000 - Bela Vista, São Paulo - SP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-100/60 border border-sage-200 text-xs text-sage-800 leading-relaxed">
+                        <i class="fa-solid fa-circle-info mr-1"></i> Resposta rápida de segunda a sexta, das 08h às 19h.
+                    </div>
+                </div>
+
+                <!-- Formulário Interativo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl border border-sand-200 shadow-md">
+                        <h3 class="text-xl font-serif font-bold text-sage-900 mb-6">Solicitar Agendamento / Contato</h3>
+                        
+                        <form id="whatsappForm" class="space-y-5">
+                            <div>
+                                <label for="nome" class="block text-xs font-semibold text-gray-700 uppercase mb-1">Nome Completo *</label>
+                                <input type="text" id="nome" required placeholder="Digite seu nome"
+                                       class="w-full px-4 py-3 rounded-xl border border-sand-300 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent text-sm transition-all">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-gray-700 uppercase mb-1">E-mail *</label>
+                                    <input type="email" id="email" required placeholder="seu@email.com"
+                                           class="w-full px-4 py-3 rounded-xl border border-sand-300 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label for="telefone" class="block text-xs font-semibold text-gray-700 uppercase mb-1">WhatsApp / Telefone *</label>
+                                    <input type="tel" id="telefone" required placeholder="(11) 99999-9999"
+                                           class="w-full px-4 py-3 rounded-xl border border-sand-300 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent text-sm transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="modalidade" class="block text-xs font-semibold text-gray-700 uppercase mb-1">Preferência de Atendimento</label>
+                                <select id="modalidade" class="w-full px-4 py-3 rounded-xl border border-sand-300 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent text-sm bg-white transition-all">
+                                    <option value="Online">Atendimento Online</option>
+                                    <option value="Presencial">Atendimento Presencial (São Paulo - SP)</option>
+                                    <option value="Ainda não sei">Gostaria de Orientação</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mensagem" class="block text-xs font-semibold text-gray-700 uppercase mb-1">Sua Mensagem (Opcional)</label>
+                                <textarea id="mensagem" rows="4" placeholder="Conte brevemente o que você busca na terapia ou suas dúvidas..."
+                                          class="w-full px-4 py-3 rounded-xl border border-sand-300 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent text-sm transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-sage-600 hover:bg-sage-700 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Enviar Mensagem via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-sage-900 text-sand-100 pt-16 pb-12 border-t border-sage-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Coluna 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center font-serif text-lg font-bold">
+                            Ψ
+                        </div>
+                        <span class="font-serif text-lg font-bold text-white">Dra. Ana Silva</span>
+                    </div>
+                    <p class="text-xs text-sage-300 leading-relaxed">
+                        Psicóloga Clínica compromissada com a promoção da saúde mental, escuta acolhedora e desenvolvimento pessoal sustentável.
+                    </p>
+                    <p class="text-xs text-sage-400">CRP: 06/123456</p>
+                </div>
+
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-xs text-sage-300">
+                        <li><a href="#sobre" class="hover:text-white transition-colors">Sobre a Profissional</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Áreas de Atuação</a></li>
+                        <li><a href="#como-funciona" class="hover:text-white transition-colors">Como Funciona a Terapia</a></li>
+                        <li><a href="#online" class="hover:text-white transition-colors">Atendimento Online</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Horário de Atendimento</h4>
+                    <ul class="space-y-2 text-xs text-sage-300">
+                        <li>Segunda a Sexta: 08:00 às 20:00</li>
+                        <li>Sábado: 08:00 às 13:00</li>
+                        <li>Domingos e Feriados: Fechado</li>
+                    </ul>
+                    <div class="mt-4 flex gap-3 text-lg text-sage-300">
+                        <a href="#" class="hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 4 (Urgências e Alerta) -->
+                <div class="bg-sage-800/80 p-5 rounded-2xl border border-sage-700">
+                    <h4 class="font-serif font-bold text-white text-sm mb-2"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Atenção em Crises</h4>
+                    <p class="text-xs text-sage-300 leading-relaxed mb-3">
+                        Este site não presta atendimento imediato em situações de emergência emocional ou risco de vida.
+                    </p>
+                    <p class="text-xs text-sage-200">
+                        Em caso de crise, procure o pronto-socorro mais próximo ou entre em contato com o <strong>Centro de Valorização da Vida (CVV)</strong> ligando para o número <strong>188</strong> (gratuito e sigiloso).
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-sage-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-sage-400 gap-4">
+                <p>© 2026 Dra. Ana Silva - Todos os direitos reservados.</p>
+                <p>Desenvolvido com foco no bem-estar e acolhimento humano.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERATIVIDADE JS -->
+    <script>
+        // Menu Mobile Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FAQ Accordion Interativo
+        const faqBtns = document.querySelectorAll('.faq-btn');
+
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle conteúdo atual
+                const isHidden = content.classList.contains('hidden');
+
+                // Fechar todos os outros
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-btn i').forEach(i => i.classList.remove('rotate-180'));
+
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // Integração do Formulário com WhatsApp
+        const form = document.getElementById('whatsappForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const modalidade = document.getElementById('modalidade').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Número fictício para teste (Substituir pelo número real com DDD)
+            const numeroWhatsapp = "5511999998888";
+
+            // Formatação do texto
+            const texto = `Olá, Dra. Ana Silva! Me chamo *${nome}*.\n\nGostaria de obter informações sobre consulta/agendamento.\n\n📌 *Detalhes:*\n- *E-mail:* ${email}\n- *Telefone:* ${telefone}\n- *Modalidade:* ${modalidade}\n${mensagem ? `- *Mensagem:* ${mensagem}` : ''}`;
+
+            const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(texto)}`;
+            
+            // Abre o WhatsApp
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
